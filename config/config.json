@@ -1,16 +1,13 @@
 {
     "features":[
-        "age",
-        "workclsss",
-        "fnlwgt",
-        "education",
-        "education-num",
-        "martial-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "native-county"
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "Age",
+        "DiabetesPedigreeFunction",
     ],
     
     "lgbm_params":{
@@ -24,6 +21,6 @@
         "num_class": 2
     },
     "loss": "multi_logloss",
-    "target_name": "Y",
+    "target_name": "Outcome",
     "ID_name": "index"
 }
