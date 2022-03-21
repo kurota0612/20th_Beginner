@@ -5,7 +5,7 @@ import mlflow
 
 FILE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-with open(os.path.join(FILE_DIR, "./config/config.yml")) as file:
+with open(os.path.join(FILE_DIR, "../config/config.yml")) as file:
     config = yaml.safe_load(file)
 
 if __name__ == "__main__":

@@ -12,18 +12,18 @@ from logs.logger import log_best
 from model.lgbm import train_and_predict
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--config", default="./configs/default.json")
+parser.add_argument("--config", default="./config/config.json")
 options = parser.parse_args()
 config = json.load(open(options.config))
 
-now = datetime.datetime.now()
-logging.basicConfig(
-    filename='./logs/log_{0:%Y%m%d%H%M%S}.log'.format(now), level=logging.DEBUG
-)
-logging.debug('./logs/log_{0:%Y%m%d%H%M%S}.log'.format(now))
+# now = datetime.datetime.now()
+# logging.basicConfig(
+#     filename='./logs/log_{0:%Y%m%d%H%M%S}.log'.format(now), level=logging.DEBUG
+# )
+# logging.debug('./logs/log_{0:%Y%m%d%H%M%S}.log'.format(now))
 
-feats = config["features"]
-logging.debug(feats)
+# feats = config["features"]
+# logging.debug(feats)
 
 target_name = config["target_name"]
 
@@ -35,6 +35,11 @@ y_preds = []
 models = []
 
 lgbm_params = config["lgbm_params"]
+
+# mlflow
+# metrics = {
+#     "":
+# }
 
 kf = KFold(n_splits=3, random_state=0)
 for train_index, valid_index in kf.split(X_train_all):
